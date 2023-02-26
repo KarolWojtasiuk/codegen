@@ -22,6 +22,10 @@ export const projectsStore = defineStore(
       })
     }
 
+    function deleteProject(id: string) {
+      projects.value = projects.value.filter((p) => p.id != id)
+    }
+
     function createUniqueIdFromName(name: string): string {
       const safeName = name.replace(' ', '-')
       if (!getProject(safeName)) {
@@ -37,7 +41,7 @@ export const projectsStore = defineStore(
       return `${safeName}-${suffixNumber}`
     }
 
-    return { projects, createProject }
+    return { projects, createProject, deleteProject }
   },
   {
     persist: true

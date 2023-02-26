@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { projectsStore } from '@/stores/projectsStore'
+import { NH1 } from 'naive-ui'
 
 const props = defineProps<{ id: string }>()
 const store = projectsStore()
@@ -10,7 +11,5 @@ if (!project) {
 </script>
 
 <template>
-  <h1>CodeEditor</h1>
-  <h2><b>ID: </b> {{ props.id }}</h2>
-  <h2><b>NAME: </b> {{ project?.name }}</h2>
+  <NH1>CodeEditor</NH1>
 </template>
